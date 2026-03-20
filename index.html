@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYEN Token</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #cccccc;
+    }
+    .highlight {
+      color: #ff9900;
+      font-weight: bold;
+    }
+    .countdown {
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #ffffff;
+    }
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+    .links a:hover {
+      background-color: #ff9900;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>$OYEN Update</h1><p>The launch of <span class="highlight">$OYEN</span> has been postponed until the end of this month.</p>
+<p>This decision comes due to the holiday season and necessary improvements in our tokenomics to ensure a stronger and more sustainable project.</p>
+
+<div class="countdown" id="countdown"></div>
+
+<p>We are not rushing. We are building it right.</p>
+
+<p class="highlight">Not just another meme coin. This is OYEN.</p>
+
+<div class="links">
+  <a href="https://t.me/yourtelegram" target="_blank">Join Telegram</a>
+  <a href="https://x.com/yourtwitter" target="_blank">Follow on X</a>
+</div>
+
+<p style="margin-top:20px;">Thank you for your patience and support.</p>
+
+  </div>  <script>
+    // Set new launch date (end of month)
+    const launchDate = new Date();
+    launchDate.setMonth(launchDate.getMonth());
+    launchDate.setDate(new Date(launchDate.getFullYear(), launchDate.getMonth()+1, 0).getDate());
+    launchDate.setHours(23,59,59);
+
+    const countdown = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "Launching Now";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script></body>
+</html>
